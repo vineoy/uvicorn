@@ -33,7 +33,12 @@ If you just want to install all of them at once, you can use the `standard` extr
     uv add 'uvicorn[standard]'
     ```
 
-The `standard` extra installs the following dependencies:
+You can also pick only the groups you need:
+
+- `uvicorn[performance]` installs `uvloop` and `httptools`.
+- `uvicorn[development]` installs `watchfiles`.
+
+The `standard` extra is the combination of both, plus `websockets`, `python-dotenv` and `PyYAML`. It installs the following dependencies:
 
 - **[`uvloop`](https://github.com/MagicStack/uvloop) — Fast, drop-in replacement of the built-in asyncio event loop.**
 

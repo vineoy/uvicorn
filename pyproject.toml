@@ -37,12 +37,17 @@ dependencies = [
 ]
 
 [project.optional-dependencies]
-standard = [
+performance = [
     "httptools>=0.8.0",
+    "uvloop>=0.15.1; sys_platform != 'win32' and (sys_platform != 'cygwin' and platform_python_implementation != 'PyPy')",
+]
+development = [
+    "watchfiles>=0.20",
+]
+standard = [
+    "uvicorn[performance,development]",
     "python-dotenv>=0.13",
     "PyYAML>=5.1",
-    "uvloop>=0.15.1; sys_platform != 'win32' and (sys_platform != 'cygwin' and platform_python_implementation != 'PyPy')",
-    "watchfiles>=0.20",
     "websockets>=13.0",
 ]
 
